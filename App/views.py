@@ -19,7 +19,6 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 # Create your views here.
-
  
 # @api_view(['POST'])
 # def product_queries(request):
@@ -40,8 +39,9 @@ def product_queries(request):
     if request.method=='POST':
         category=request.data.get('Category')
         sub_category=request.data.get('SubCategory')
+        product_name=request.data.get('Product')
        
-        products = products.filter(category=category,sub_category=sub_category)
+        products = products.filter(product_name=product_name,category=category,sub_category=sub_category)
 
 
     serializer=ProductSerializer(products, many=True) 

@@ -21,10 +21,13 @@ class SubCategory(models.Model):
 class Product(models.Model):   
      
     category=models.ForeignKey(Category,on_delete=models.CASCADE)
-    sub_category=models.ForeignKey(SubCategory,on_delete=models.CASCADE,null=True) 
+    sub_category=models.ForeignKey(SubCategory,on_delete=models.CASCADE,blank=True) 
     product_name=models.CharField(max_length=100, unique=True, null=True) 
-    regular_price=models.FloatField(max_length=100, unique=True, null=True) 
-    #discounted_price=models.FloatField(max_length=100, unique=True, null=True) 
+    regular_price=models.FloatField(max_length=100, null=True) 
+    inventory_id=models.IntegerField( null=True) 
+    discounted_price=models.FloatField(max_length=100, null=True) 
+    description=models.CharField(max_length=100, unique=True, null=True) 
+    available_stock=models.IntegerField() 
   
     def __str__(self):
         return self.product_name
