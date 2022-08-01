@@ -22,10 +22,33 @@ class SubCategorySerializer(serializers.ModelSerializer):
 class ProductSerializer(serializers.ModelSerializer):
 
 
-    #category=CategorySerializer(many=False)
+    category=CategorySerializer(many=False)
     sub_category=SubCategorySerializer(many=False)
     id= serializers.IntegerField(required=False)
     
     class Meta:
         model = Product
         fields="__all__"
+
+
+
+
+class ThanaSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Thana
+        fields="__all__"        
+
+
+class DistrictSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = District
+        fields="__all__"       
+
+
+class MarketSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Market
+        fields="__all__"                    
