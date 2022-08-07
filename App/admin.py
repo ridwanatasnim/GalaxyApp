@@ -13,3 +13,8 @@ admin.site.register(District)
 admin.site.register(Market)
 admin.site.register(Retail)
 
+admin.site.register(Customer)
+admin.site.register(Order)
+admin.site.register(OrderItem)
+
+
